@@ -8,7 +8,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float jumpTime = 0.5f; // Tiempo para alcanzar la altura m�xima del salto
     [SerializeField] private float gravityScale = 1f; // Escala de gravedad para el personaje
-    [SerializeField] private float acceleration = 10f; // Aceleraci�n del movimiento horizontal
+    [SerializeField] private float acceleration = 10f; // Aceleraciónn del movimiento horizontal
     [SerializeField] private float jumpCooldown = 0.2f; // Tiempo entre saltos
     [SerializeField] private BoxCollider2D groundTrigger; // Collider en los pies en modo trigger
 
