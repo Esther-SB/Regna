@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\assets\\scripts\\reusables\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reusables\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|c:\\users\\raula\\documents\\github\\pixelartgame\\assets\\scripts\\reusables\\fadeondeath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reusables\\fadeondeath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|c:\\users\\raula\\documents\\github\\pixelartgame\\assets\\scripts\\reusables\\flashonhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reusables\\flashonhit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\assets\\scripts\\reusables\\damagedealer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reusables\\damagedealer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\assets\\scripts\\main character\\charactermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F987DC7-4A68-9D52-4E2F-11C1DDC8A2E8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main character\\charactermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FadeOnDeath.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Reusables\\FadeOnDeath.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Reusables\\FadeOnDeath.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Reusables\\FadeOnDeath.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Reusables\\FadeOnDeath.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T16:39:35.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FlashOnHit.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Reusables\\FlashOnHit.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Reusables\\FlashOnHit.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Reusables\\FlashOnHit.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Reusables\\FlashOnHit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T16:17:26.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DamageDealer.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Reusables\\DamageDealer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Reusables\\DamageDealer.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Reusables\\DamageDealer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Reusables\\DamageDealer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T16:16:57.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Health.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Reusables\\Health.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Reusables\\Health.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Reusables\\Health.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Reusables\\Health.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwDYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T16:16:16.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CharacterMovement.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Main Character\\CharacterMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Main Character\\CharacterMovement.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\PixelArtGAME\\Assets\\Scripts\\Main Character\\CharacterMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Main Character\\CharacterMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T14:39:07.113Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
