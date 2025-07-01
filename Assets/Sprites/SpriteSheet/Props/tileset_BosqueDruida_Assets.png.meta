@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 458ac077898e31745afd4d1909b372df
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 251
+      alignment: 9
+      pivot: {x: 0.513302, y: 0.061446022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50a939c7d302074f88fa105000f8fc0
+      internalID: -1333650634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 640
+        width: 210
+        height: 129
+      alignment: 9
+      pivot: {x: 0.4728015, y: 0.061894853}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eaa1962d81f084785644448f428ce3
+      internalID: -1184214295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 101
+        height: 161
+      alignment: 9
+      pivot: {x: 0.57461774, y: 0.07060194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51083cd98d6279468eae83a7c349093
+      internalID: 1583232323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 85
+        height: 138
+      alignment: 9
+      pivot: {x: 0.50000036, y: 0.10933928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b33460c072c1d43a3ef556603feddc
+      internalID: 1658871521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 85
+        height: 171
+      alignment: 9
+      pivot: {x: 0.48507655, y: 0.080876224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b6b660a852d084f876d768a1b2044a
+      internalID: -1856588608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 16
+        width: 157
+        height: 156
+      alignment: 9
+      pivot: {x: 0.505478, y: 0.07254697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be58769c82e65549b5883130ecbb014
+      internalID: -155921391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 16
+        width: 157
+        height: 156
+      alignment: 9
+      pivot: {x: 0.5, y: 0.072546974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ae34955a610e240a5f956035c48654
+      internalID: 432678501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_7
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 16
+        width: 157
+        height: 156
+      alignment: 9
+      pivot: {x: 0.49694145, y: 0.07254697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077d494692811a64d91ed27702765c59
+      internalID: 1736478168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_BosqueDruida_Assets_8
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 16
+        width: 157
+        height: 156
+      alignment: 9
+      pivot: {x: 0.4980317, y: 0.07254697}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b5f144af6bd1349a80cce70104770e
+      internalID: -285311594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      tileset_BosqueDruida_Assets_0: -1333650634
+      tileset_BosqueDruida_Assets_1: -1184214295
+      tileset_BosqueDruida_Assets_2: 1583232323
+      tileset_BosqueDruida_Assets_3: 1658871521
+      tileset_BosqueDruida_Assets_4: -1856588608
+      tileset_BosqueDruida_Assets_5: -155921391
+      tileset_BosqueDruida_Assets_6: 432678501
+      tileset_BosqueDruida_Assets_7: 1736478168
+      tileset_BosqueDruida_Assets_8: -285311594
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
