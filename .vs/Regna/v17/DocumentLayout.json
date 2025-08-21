@@ -1,14 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Esther\\UPV\\BBAA\\TFG\\Regna\\",
+  "WorkspaceRootPath": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|f:\\esther\\upv\\bbaa\\tfg\\regna\\assets\\scripts\\main character\\charactermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main character\\charactermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|c:\\users\\raula\\documents\\github\\regna\\assets\\scripts\\reuso\\lootitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reuso\\lootitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|f:\\esther\\upv\\bbaa\\tfg\\regna\\assets\\scripts\\reuso\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reuso\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|C:\\Users\\raula\\Documents\\GitHub\\Regna\\assets\\scripts\\reuso\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reuso\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|C:\\Users\\raula\\Documents\\GitHub\\Regna\\assets\\scripts\\reuso\\camerafollow2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reuso\\camerafollow2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|C:\\Users\\raula\\Documents\\GitHub\\Regna\\assets\\scripts\\reuso\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reuso\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|C:\\Users\\raula\\Documents\\GitHub\\Regna\\assets\\scripts\\reuso\\resourceuientry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reuso\\resourceuientry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|C:\\Users\\raula\\Documents\\GitHub\\Regna\\assets\\scripts\\reuso\\lootspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D3D0BB6-60EF-568B-8878-83B3BE781BAF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reuso\\lootspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CharacterMovement.cs",
-              "DocumentMoniker": "F:\\Esther\\UPV\\BBAA\\TFG\\Regna\\Assets\\Scripts\\Main Character\\CharacterMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Main Character\\CharacterMovement.cs",
-              "ToolTip": "F:\\Esther\\UPV\\BBAA\\TFG\\Regna\\Assets\\Scripts\\Main Character\\CharacterMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Main Character\\CharacterMovement.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAgwGkAAAAZAAAA",
+              "DocumentIndex": 4,
+              "Title": "ResourceUIEntry.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\ResourceUIEntry.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ReUso\\ResourceUIEntry.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\ResourceUIEntry.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ReUso\\ResourceUIEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T09:43:02.558Z",
+              "WhenOpened": "2025-08-21T14:04:30.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResourceManager.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\ResourceManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ReUso\\ResourceManager.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\ResourceManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ReUso\\ResourceManager.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAiwH8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T13:59:29.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CameraFollow2D.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\CameraFollow2D.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ReUso\\CameraFollow2D.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\CameraFollow2D.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ReUso\\CameraFollow2D.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAwwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T13:06:22.049Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Health.cs",
-              "DocumentMoniker": "F:\\Esther\\UPV\\BBAA\\TFG\\Regna\\Assets\\Scripts\\ReUso\\Health.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ReUso\\Health.cs",
-              "ToolTip": "F:\\Esther\\UPV\\BBAA\\TFG\\Regna\\Assets\\Scripts\\ReUso\\Health.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ReUso\\Health.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\Inventory.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ReUso\\Inventory.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\Inventory.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ReUso\\Inventory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T09:33:28.604Z",
+              "WhenOpened": "2025-08-21T12:31:27.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LootItem.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\LootItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ReUso\\LootItem.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\LootItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ReUso\\LootItem.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAwwK4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T12:30:51.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LootSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\LootSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ReUso\\LootSpawner.cs",
+              "ToolTip": "C:\\Users\\raula\\Documents\\GitHub\\Regna\\Assets\\Scripts\\ReUso\\LootSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ReUso\\LootSpawner.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwDIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T12:29:31.852Z",
               "EditorCaption": ""
             }
           ]
