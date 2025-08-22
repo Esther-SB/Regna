@@ -37,6 +37,7 @@ public class LootItem : MonoBehaviour
     private float reFindTimer;
     private LootState state = LootState.Flying;
     private bool canPickup = false;
+    private ResourceManager rm;
 
     // Impulso inicial al instanciar (llámalo desde el spawner)
     public void Init(Vector2 impulse)
@@ -51,6 +52,16 @@ public class LootItem : MonoBehaviour
 
     private void Awake()
     {
+        GameObject go = GameObject.Find("Manager");
+        if (go != null)
+        {
+            // Coger un componente del GameObject
+            rm = go.GetComponent<ResourceManager>();
+            if (rm != null)
+            {
+                Debug.Log("Encontrado el ResourceManager en " + go.name);
+            }
+        }
         rb = GetComponent<Rigidbody2D>();
         spawnTime = Time.time;
         ResolvePlayerRefs(); // primer intento
@@ -158,9 +169,9 @@ public class LootItem : MonoBehaviour
     private void Collect()
     {
         // SUMA DIRECTAMENTE AL RESOURCE MANAGER -> el HUD se actualizará por evento
-        if (ResourceManager.Instance != null)
-            ResourceManager.Instance.Add(lootType, amount);
-
+        if (rm != null)
+            rm.Add(lootType, amount);
+            Debug.Log($"Recogido {amount} de {lootType}");
         // Aquí puedes reproducir sonido/partículas si quieres
         Destroy(gameObject);
     }

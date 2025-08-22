@@ -20,41 +20,91 @@ public struct ResourceAmount
 
 public class ResourceManager : MonoBehaviour
 {
-    // --- Singleton simple ---
-    public static ResourceManager Instance { get; private set; }
+    // ==========================
+    //  CONFIG DE ESCENA
+    // ==========================
+    private const string ExpectedGOName = "Manager"; // Debe vivir en un GO llamado así
 
-    // --- Eventos ---
-    /// <summary>Llamado cuando cambia un recurso concreto: (tipo, nuevoValor)</summary>
+    // Referencia principal (no destruimos duplicados; solo avisamos)
+    public static ResourceManager Instance { get; private set; }
+    [Header("Runtime (solo lectura - depuración)")]
+    [SerializeField] private List<ResourceAmount> runtimeSnapshot = new List<ResourceAmount>();
+
+    /// <summary>
+    /// Acceso estático seguro. Si no hay Instance, intenta buscar un GO "Manager"
+    /// y coger su ResourceManager.
+    /// </summary>
+    public static ResourceManager Current
+    {
+        get
+        {
+            if (Instance != null) return Instance;
+
+            var go = GameObject.Find(ExpectedGOName);
+            if (go != null)
+            {
+                var rm = go.GetComponent<ResourceManager>();
+                if (rm != null)
+                {
+                    Instance = rm;
+#if UNITY_EDITOR
+                    Debug.Log("[ResourceManager] Referencia enlazada por nombre \"Manager\".");
+#endif
+                    return Instance;
+                }
+#if UNITY_EDITOR
+                Debug.LogError("[ResourceManager] El GameObject \"Manager\" no tiene ResourceManager.");
+#endif
+            }
+#if UNITY_EDITOR
+            else Debug.LogError("[ResourceManager] No se encontró un GameObject llamado \"Manager\" en la escena.");
+#endif
+            return null;
+        }
+    }
+
+    // ==========================
+    //  EVENTOS
+    // ==========================
     public event Action<ResourceType, int> OnResourceChanged;
-    /// <summary>Llamado cuando cambia cualquier recurso</summary>
     public event Action OnAnyChanged;
 
-    // --- Configuración inicial ---
+    // ==========================
+    //  INICIALIZACIÓN
+    // ==========================
     [Header("Valores iniciales")]
-    [Tooltip("Valores al iniciar la partida/escena.")]
     [SerializeField]
     private List<ResourceAmount> startingValues = new List<ResourceAmount>()
     {
-        new ResourceAmount{ type = ResourceType.Wood, amount = 0 },
+        new ResourceAmount{ type = ResourceType.Wood,  amount = 0 },
         new ResourceAmount{ type = ResourceType.Stone, amount = 0 },
-        new ResourceAmount{ type = ResourceType.Food, amount = 0 },
-        new ResourceAmount{ type = ResourceType.Fish, amount = 0 },
+        new ResourceAmount{ type = ResourceType.Food,  amount = 0 },
+        new ResourceAmount{ type = ResourceType.Fish,  amount = 0 },
     };
 
-    // --- Almacenamiento interno ---
+    // Almacenamiento
     private readonly Dictionary<ResourceType, int> amounts = new Dictionary<ResourceType, int>();
 
-    // -------------------- Ciclo de vida --------------------
     private void Awake()
     {
+        // Avisos de montaje
+        if (gameObject.name != ExpectedGOName)
+        {
+#if UNITY_EDITOR
+            Debug.LogWarning($"[ResourceManager] Este componente está en \"{gameObject.name}\". Se espera \"{ExpectedGOName}\".");
+#endif
+        }
+
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
-            return;
+#if UNITY_EDITOR
+            Debug.LogWarning("[ResourceManager] Ya hay otra referencia asignada. Mantengo la primera y continúo.");
+#endif
         }
-        Instance = this;
-        // Si quieres mantenerlo entre escenas, descomenta:
-        // DontDestroyOnLoad(gameObject);
+        else
+        {
+            Instance = this;
+        }
 
         InitStartingValues();
     }
@@ -62,80 +112,94 @@ public class ResourceManager : MonoBehaviour
     private void InitStartingValues()
     {
         amounts.Clear();
+
+        // Inicializa todas las claves del enum a 0
         foreach (ResourceType t in Enum.GetValues(typeof(ResourceType)))
             amounts[t] = 0;
 
+        // Aplica starting values
         foreach (var entry in startingValues)
-            Set(entry.type, entry.amount, silent: true);
+            InternalSet(entry.type, entry.amount, silent: true);
 
-        // Dispara eventos iniciales para que la UI se sincronice si hace falta
+        // Notifica valores iniciales
         foreach (var kv in amounts)
             OnResourceChanged?.Invoke(kv.Key, kv.Value);
         OnAnyChanged?.Invoke();
     }
 
-    // -------------------- API pública --------------------
+    // ==========================
+    //  API PÚBLICA (instancia)
+    // ==========================
+    public int Get(ResourceType type)
+    {
+        EnsureKey(type);
+        return amounts[type];
+    }
 
-    /// <summary>Devuelve el valor actual (0 si no existe).</summary>
-    public int Get(ResourceType type) => amounts.TryGetValue(type, out var v) ? v : 0;
-
-    /// <summary>Asigna un valor concreto (emite eventos). negative -> se recorta a 0.</summary>
     public void Set(ResourceType type, int value, bool silent = false)
     {
-        int newVal = Mathf.Max(0, value);
-        amounts[type] = newVal;
-        if (!silent)
-        {
-            OnResourceChanged?.Invoke(type, newVal);
-            OnAnyChanged?.Invoke();
-        }
+        InternalSet(type, value, silent);
     }
 
-    /// <summary>Suma una cantidad (solo positivos). Emite eventos.</summary>
     public void Add(ResourceType type, int delta)
     {
-        if (delta <= 0) return;
-        Set(type, Get(type) + delta);
+        if (delta <= 0)
+        {
+#if UNITY_EDITOR
+            Debug.LogWarning($"[ResourceManager] Add ignorado: delta <= 0 ({delta}) para {type}");
+#endif
+            return;
+        }
+        EnsureKey(type);
+        InternalSet(type, amounts[type] + delta, silent: false);
+#if UNITY_EDITOR
+        Debug.Log($"[ResourceManager] +{delta} {type} => {amounts[type]}");
+#endif
     }
 
-    /// <summary>Intenta gastar cantidad. Devuelve true si pudo.</summary>
     public bool Spend(ResourceType type, int delta)
     {
         if (delta <= 0) return true;
-        int current = Get(type);
-        if (current < delta) return false;
-        Set(type, current - delta);
+        EnsureKey(type);
+        if (amounts[type] < delta) return false;
+        InternalSet(type, amounts[type] - delta, silent: false);
         return true;
     }
 
-    /// <summary>¿Se pueden pagar TODOS los costes indicados?</summary>
     public bool CanAfford(IEnumerable<ResourceAmount> costs)
     {
         foreach (var c in costs)
-            if (Get(c.type) < c.amount) return false;
+        {
+            EnsureKey(c.type);
+            if (amounts[c.type] < c.amount) return false;
+        }
         return true;
     }
 
-    /// <summary>Intenta gastar un conjunto de recursos atómicamente.</summary>
     public bool Spend(IEnumerable<ResourceAmount> costs)
     {
-        // Comprobación previa
         if (!CanAfford(costs)) return false;
 
-        // Ejecutar gasto
+        // Ejecuta el gasto de forma silenciosa
         foreach (var c in costs)
-            Set(c.type, Get(c.type) - c.amount);
+        {
+            EnsureKey(c.type);
+            amounts[c.type] -= c.amount;
+        }
 
+        // Notifica cambios de todos los tipos afectados (sencillo: notificamos todos)
+        foreach (ResourceType t in Enum.GetValues(typeof(ResourceType)))
+            OnResourceChanged?.Invoke(t, amounts[t]);
+        OnAnyChanged?.Invoke();
         return true;
     }
 
-    /// <summary>Resetea todos los recursos a 0 o a los valores iniciales.</summary>
     public void ResetAll(bool toStartingValues = true)
     {
         if (!toStartingValues)
         {
             foreach (ResourceType t in Enum.GetValues(typeof(ResourceType)))
-                Set(t, 0, silent: true);
+                InternalSet(t, 0, silent: true);
         }
         else
         {
@@ -148,15 +212,58 @@ public class ResourceManager : MonoBehaviour
         OnAnyChanged?.Invoke();
     }
 
-    // -------------------- Utilidades de prueba (opcional) --------------------
+    // ==========================
+    //  WRAPPERS ESTÁTICOS
+    // ==========================
+    public static int GetStatic(ResourceType type) => Current != null ? Current.Get(type) : 0;
+    public static void SetStatic(ResourceType type, int value) => Current?.Set(type, value);
+    public static void AddStatic(ResourceType type, int delta) => Current?.Add(type, delta);
+    public static bool SpendStatic(ResourceType type, int v) => Current != null && Current.Spend(type, v);
+
+    // ==========================
+    //  INTERNOS
+    // ==========================
+    private void EnsureKey(ResourceType type)
+    {
+        if (!amounts.ContainsKey(type))
+            amounts[type] = 0;
+    }
+
+    private void InternalSet(ResourceType type, int value, bool silent)
+    {
+        EnsureKey(type);
+        int newVal = Mathf.Max(0, value);
+        amounts[type] = newVal;
+
+        if (!silent)
+        {
+            OnResourceChanged?.Invoke(type, newVal);
+            OnAnyChanged?.Invoke();
+        }
+    }
+
+
+
 #if UNITY_EDITOR
-    [ContextMenu("DEBUG: +10 Wood")]
-    private void Debug_AddWood() => Add(ResourceType.Wood, 10);
+    private void OnValidate()
+    {
+        // Aviso amistoso si no está en "Manager"
+        if (gameObject.name != ExpectedGOName)
+            Debug.LogWarning($"[ResourceManager] Este componente debería estar en un GO llamado \"{ExpectedGOName}\".");
 
-    [ContextMenu("DEBUG: Spend 5 Wood")]
-    private void Debug_SpendWood() => Spend(ResourceType.Wood, 5);
-
-    [ContextMenu("DEBUG: Reset to starting values")]
-    private void Debug_Reset() => ResetAll(true);
+        // Aviso por duplicados en startingValues
+        var seen = new HashSet<ResourceType>();
+        for (int i = 0; i < startingValues.Count; i++)
+        {
+            if (seen.Contains(startingValues[i].type))
+            {
+                Debug.LogWarning($"[ResourceManager] Duplicado en Starting Values: {startingValues[i].type}.");
+            }
+            else seen.Add(startingValues[i].type);
+        }
+    }
 #endif
+
+
+
 }
