@@ -147,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -173,17 +173,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootType: 0
   amount: 1
-  resourceManagerOverride: {fileID: 5501861472062040117, guid: b841dc0bd7ab3ec4e825e35c106efd2e, type: 3}
-  playerTag: Player
   explicitTarget: {fileID: 0}
+  playerTag: Player
   reFindInterval: 0.5
-  fallDelay: 0.15
-  autoMagnetTimeout: 0.75
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   groundRayDistance: 0.25
   groundRayOffset: {x: 0, y: 0.05}
+  pickupDelayAfterLanding: 0.2
   magnetSpeed: 5
   magnetResponsiveness: 12
   collectDistance: 1.75

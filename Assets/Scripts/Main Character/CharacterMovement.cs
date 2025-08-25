@@ -11,8 +11,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float acceleration = 10f;
     [SerializeField] private float jumpCooldown = 0.2f;
     [SerializeField] private BoxCollider2D groundTrigger;
-    [SerializeField] private Transform visualTransform; // Asigna aquí "Square (5)" en el Inspector
-    [SerializeField] private float turnDelay = 0.2f; // Duración simulada de la animación de giro
+    [SerializeField] private Transform visualTransform; // Asigna aquí el transform visual
+    [SerializeField] private float turnDelay = 0.2f;
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -26,6 +26,10 @@ public class CharacterMovement : MonoBehaviour
 
     private Animator animator;
 
+    // --- NUEVO: sistema de bloqueo de movimiento (apilable) ---
+    private int movementBlockCount = 0;
+    public bool IsMovementBlocked => movementBlockCount > 0;
+
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
@@ -37,7 +41,6 @@ public class CharacterMovement : MonoBehaviour
     {
         if (groundTrigger != null)
         {
-            // Añade un componente dinámicamente al objeto GroundCheck que reenvía los triggers a este script
             GroundCheckDispatcher dispatcher = groundTrigger.gameObject.AddComponent<GroundCheckDispatcher>();
             dispatcher.Init(this);
         }
@@ -46,6 +49,15 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         float input = Input.GetAxis("Horizontal");
+
+        if (IsMovementBlocked)
+        {
+            // Ignora input y deja al personaje quieto en X mientras está bloqueado
+            moveDirection = 0f;
+            jumpRequested = false;
+            UpdateAnimator();
+            return;
+        }
 
         // Si estamos girando, bloquear cambio de dirección contraria
         if (isTurning)
@@ -88,10 +100,14 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         float targetSpeed = moveDirection * (isRunning ? runSpeed : moveSpeed);
+
+        // Si está bloqueado, forzamos targetSpeed a 0
+        if (IsMovementBlocked) targetSpeed = 0f;
+
         currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.fixedDeltaTime);
         rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
 
-        if (jumpRequested)
+        if (jumpRequested && !IsMovementBlocked)
         {
             float jumpVelocity = CalculateJumpVelocity(jumpHeight, jumpTime);
             rb.AddForce(new Vector2(0f, jumpVelocity), ForceMode2D.Impulse);
@@ -103,7 +119,6 @@ public class CharacterMovement : MonoBehaviour
     {
         if (animator != null)
         {
-            //añadir idle
             animator.SetFloat("Speed", Mathf.Abs(moveDirection));
             animator.SetBool("IsJumping", !isGrounded);
         }
@@ -154,13 +169,11 @@ public class CharacterMovement : MonoBehaviour
     {
         isTurning = true;
 
-        // Aquí es donde puedes activar la animación de giro
         if (animator != null)
         {
-            animator.SetTrigger("Turn"); // Usa este trigger si tienes una animación de giro
+            animator.SetTrigger("Turn");
         }
 
-        // Esperamos el tiempo de animación de giro
         yield return new WaitForSeconds(turnDelay);
 
         isFacingRight = faceRight;
@@ -174,12 +187,22 @@ public class CharacterMovement : MonoBehaviour
     {
         isGrounded = grounded;
     }
+
+    // -------- NUEVO: API para bloquear/desbloquear --------
+    public void PushMovementBlock()
+    {
+        movementBlockCount++;
+        // Frena inmediatamente el desplazamiento horizontal
+        moveDirection = 0f;
+        currentSpeed = 0f;
+        if (rb != null) rb.velocity = new Vector2(0f, rb.velocity.y);
+    }
+
+    public void PopMovementBlock()
+    {
+        movementBlockCount = Mathf.Max(0, movementBlockCount - 1);
+    }
 }
-
-
-
-
-
 
 // Clase auxiliar modular, reutilizable
 public class GroundCheckDispatcher : MonoBehaviour
