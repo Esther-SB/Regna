@@ -43,6 +43,19 @@ public class MainMenu : MonoBehaviour
     */
     public void PlayGame()
     {
+        if (SaveSystem.SaveExists())
+        {
+            var data = SaveSystem.LoadGame();
+            Debug.Log("Cargando partida guardada: " + data.GetPosition());
+            GameManager.instance.LoadGame(data);
+        }
+        else
+        {
+            var newData = new GameData();
+            SaveSystem.SaveGame(newData);
+            Debug.Log("Partida guardada: " + newData.GetPosition());
+            GameManager.instance.LoadGame(newData);
+        }
         SceneManager.LoadScene(gameScene);
     }
 }
