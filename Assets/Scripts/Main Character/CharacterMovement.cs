@@ -26,10 +26,6 @@ public class CharacterMovement : MonoBehaviour
 
     private Animator animator;
 
-    // --- NUEVO: sistema de bloqueo de movimiento (apilable) ---
-    private int movementBlockCount = 0;
-    public bool IsMovementBlocked => movementBlockCount > 0;
-
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
@@ -41,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (groundTrigger != null)
         {
+            // Añade un componente dinámicamente al objeto GroundCheck que reenvía los triggers a este script
             GroundCheckDispatcher dispatcher = groundTrigger.gameObject.AddComponent<GroundCheckDispatcher>();
             dispatcher.Init(this);
         }
