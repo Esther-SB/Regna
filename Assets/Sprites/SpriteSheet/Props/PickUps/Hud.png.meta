@@ -331,10 +331,10 @@ TextureImporter:
       name: Hud_11
       rect:
         serializedVersion: 2
-        x: 654
-        y: 517
-        width: 230
-        height: 235
+        x: 846
+        y: 719
+        width: 39
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

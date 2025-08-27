@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float acceleration = 10f;
     [SerializeField] private float jumpCooldown = 0.2f;
     [SerializeField] private BoxCollider2D groundTrigger;
-    [SerializeField] private Transform visualTransform; // Asigna aquï¿½ el transform visual
+    [SerializeField] private Transform visualTransform; // Asigna aquí el transform visual
     [SerializeField] private float turnDelay = 0.2f;
 
     private Rigidbody2D rb;
@@ -26,10 +26,6 @@ public class CharacterMovement : MonoBehaviour
 
     private Animator animator;
 
-    // --- NUEVO: sistema de bloqueo de movimiento (apilable) ---
-    private int movementBlockCount = 0;
-    public bool IsMovementBlocked => movementBlockCount > 0;
-
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
@@ -41,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (groundTrigger != null)
         {
+            // Añade un componente dinámicamente al objeto GroundCheck que reenvía los triggers a este script
             GroundCheckDispatcher dispatcher = groundTrigger.gameObject.AddComponent<GroundCheckDispatcher>();
             dispatcher.Init(this);
         }
@@ -52,21 +49,21 @@ public class CharacterMovement : MonoBehaviour
 
         if (IsMovementBlocked)
         {
-            // Ignora input y deja al personaje quieto en X mientras estï¿½ bloqueado
+            // Ignora input y deja al personaje quieto en X mientras está bloqueado
             moveDirection = 0f;
             jumpRequested = false;
             UpdateAnimator();
             return;
         }
 
-        // Si estamos girando, bloquear cambio de direcciï¿½n contraria
+        // Si estamos girando, bloquear cambio de dirección contraria
         if (isTurning)
         {
             moveDirection = 0f;
         }
         else
         {
-            // Cambio de direcciï¿½n detectado
+            // Cambio de dirección detectado
             if (input > 0.01f && !isFacingRight)
             {
                 StartCoroutine(Turn(true));
@@ -101,7 +98,7 @@ public class CharacterMovement : MonoBehaviour
     {
         float targetSpeed = moveDirection * (isRunning ? runSpeed : moveSpeed);
 
-        // Si estï¿½ bloqueado, forzamos targetSpeed a 0
+        // Si está bloqueado, forzamos targetSpeed a 0
         if (IsMovementBlocked) targetSpeed = 0f;
 
         currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.fixedDeltaTime);
