@@ -55,18 +55,27 @@ public class SystemController : MonoBehaviour
         screenShakeToggle.onValueChanged.AddListener(SetScreenShake);
     }
 
+    /*
+    Metodo para cambiar el idioma
+    */
     public void ChangeLanguage(int langIndex)
     {
         Language selectedLang = (Language)langIndex;
         PlayerPrefs.SetInt("Language", (int)selectedLang);
     }
 
+    /*
+    Metodo para cambiar la velocidad de los diálogos
+    */
     public void ChangeDialogueSpeed(int speedIndex)
     {
         DialogueSpeed selectedSpeed = (DialogueSpeed)speedIndex;
         PlayerPrefs.SetInt("DialogueSpeed", (int)selectedSpeed);
     }
 
+    /*
+    Metodo para activar/desactivar el temblor de pantalla
+    */
     public void SetScreenShake(bool shakeEnabled)
     {
         PlayerPrefs.SetInt("ScreenShake", shakeEnabled ? 1 : 0);

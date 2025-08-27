@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,6 +28,9 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    /*
+    Cargamos la escena y restauramos la posición del jugador
+    */
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Escena cargada: " + scene.name);
@@ -43,10 +44,10 @@ public class GameManager : MonoBehaviour
         else
         {
             if (player == null)
-            Debug.LogWarning("Jugador no encontrado en la escena.");
-        if (gameData == null)
-            Debug.LogWarning("GameData es null.");
-         }
+                Debug.LogWarning("Jugador no encontrado en la escena.");
+            if (gameData == null)
+                Debug.LogWarning("GameData es null.");
+        }
     }
 
     /*
