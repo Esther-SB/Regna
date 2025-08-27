@@ -3,10 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gamePaused = false;
+    [Header("Paneles")]
     public GameObject pauseMenuUI;
     public GameObject optionsMenu;
+    public GameObject controlsMenu;
     private string gameScene = "RegnaTest";
+    public static bool gamePaused = false;
 
     void Update()
     {
@@ -24,6 +26,9 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    /*
+    Reactiva el juego
+    */
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
@@ -31,6 +36,9 @@ public class PauseMenu : MonoBehaviour
         gamePaused = false;
     }
 
+    /*
+    Pausa el juego
+    */
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -38,6 +46,9 @@ public class PauseMenu : MonoBehaviour
         gamePaused = true;
     }
 
+    /*
+    Guarda el estado del juego (por ahora solo la posición del jugador)
+    */
     public void SaveGame()
     {
         var player = GameObject.FindWithTag("Player");
@@ -47,6 +58,9 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    /*
+    Elimina la partida guardada y los playerprefs
+    */
     public void NewGame()
     {
         if (SaveSystem.SaveExists())
@@ -54,6 +68,7 @@ public class PauseMenu : MonoBehaviour
             SaveSystem.DeleteSave();
         }
 
+        PlayerPrefs.DeleteAll();
         var newData = new GameData();
         SaveSystem.SaveGame(newData);
         GameManager.instance.LoadGame(newData);
@@ -61,18 +76,45 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(gameScene);
     }
 
+    /*
+    Abre el menú de opciones
+    */
     public void OpenOptions()
     {
         pauseMenuUI.SetActive(false);
         optionsMenu.SetActive(true);
     }
 
+    /*
+    Cierra el menú de opciones
+    */
     public void CloseOptions()
     {
         optionsMenu.SetActive(false);
         pauseMenuUI.SetActive(true);
     }
 
+    /*
+    Abre el menú de controles
+    */
+    public void OpenControls()
+    {
+        pauseMenuUI.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
+
+    /*
+    Cierra el menú de controles
+    */
+    public void CloseControls()
+    {
+        controlsMenu.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
+
+    /*
+    Vuelve al menú principal
+    */
     public void QuitMainMenu()
     {
         Time.timeScale = 1f;
