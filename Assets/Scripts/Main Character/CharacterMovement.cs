@@ -119,8 +119,9 @@ public class CharacterMovement : MonoBehaviour
     {
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(moveDirection));
+            animator.SetFloat("Speed", Mathf.Abs(currentSpeed));
             animator.SetBool("IsJumping", !isGrounded);
+            Debug.Log(moveDirection);
         }
     }
 

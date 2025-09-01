@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  runSpeed: 10
+  runSpeed: 7.5
   jumpHeight: 3.4
   jumpTime: 0.3
   gravityScale: 3
