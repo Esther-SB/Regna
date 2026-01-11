@@ -102,10 +102,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,12 +121,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_1
       rect:
         serializedVersion: 2
-        x: 248
+        x: 256
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,12 +142,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_2
       rect:
         serializedVersion: 2
-        x: 496
+        x: 512
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_3
       rect:
         serializedVersion: 2
-        x: 744
+        x: 768
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_4
       rect:
         serializedVersion: 2
-        x: 992
+        x: 1024
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,12 +205,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_5
       rect:
         serializedVersion: 2
-        x: 1240
+        x: 1280
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,12 +226,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_6
       rect:
         serializedVersion: 2
-        x: 1488
+        x: 1536
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_7
       rect:
         serializedVersion: 2
-        x: 1736
+        x: 1792
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1984
+        x: 2048
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,12 +289,12 @@ TextureImporter:
       name: Alda-Picar-Sheet_9
       rect:
         serializedVersion: 2
-        x: 2232
+        x: 2304
         y: 0
-        width: 248
+        width: 256
         height: 356
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
