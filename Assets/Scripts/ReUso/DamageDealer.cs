@@ -1,27 +1,32 @@
 using UnityEngine;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 
+[RequireComponent(typeof(Collider2D))]
 public class DamageDealer : MonoBehaviour
 {
+    [Header("Damage")]
     [SerializeField] private float damage = 10f;
     [SerializeField] private float activeDuration = 0.5f;
 
     private Collider2D hitbox;
-    private HashSet<Health> damagedTargets = new HashSet<Health>();
+    private readonly HashSet<Health> damagedTargets = new();
+
     private Coroutine damageRoutine;
+    private ToolData currentTool;
 
     private void Awake()
     {
         hitbox = GetComponent<Collider2D>();
-        if (hitbox == null)
-            Debug.LogError("DamageDealer requiere un Collider2D.");
-        else
-            hitbox.enabled = false; // empieza desactivado
+        hitbox.isTrigger = true;
+        hitbox.enabled = false;
     }
 
-    public void Activate()
+    // === Llamado desde PlayerToolUser ===
+    public void Activate(ToolData tool)
     {
+        currentTool = tool;
+
         if (damageRoutine != null)
             StopCoroutine(damageRoutine);
 
@@ -31,20 +36,41 @@ public class DamageDealer : MonoBehaviour
 
     private IEnumerator ActivateDamage()
     {
-        hitbox.enabled = true; // se activa
+        hitbox.enabled = true;
         yield return new WaitForSeconds(activeDuration);
-        hitbox.enabled = false; // se apaga
+        hitbox.enabled = false;
+
+        currentTool = null;
         damageRoutine = null;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Health target = other.GetComponent<Health>();
-        if (target != null && !damagedTargets.Contains(target))
+        // ---------- Recursos ----------
+        var resource = other.GetComponent<BreakableResource>();
+        if (resource != null)
         {
-            Debug.Log($"Daño aplicado a: {target.name}");
-            target.TakeDamage(damage);
-            damagedTargets.Add(target);
+            if (currentTool != null && resource.CanBeBrokenBy(currentTool))
+            {
+                // ---------- Entidades con vida ----------
+                var healthTarget = other.GetComponent<Health>();
+                if (healthTarget != null && !damagedTargets.Contains(healthTarget))
+                {
+                    Debug.Log($"Daño aplicado a: {healthTarget.name}");
+                    healthTarget.TakeDamage(damage);
+                    damagedTargets.Add(healthTarget);
+                }
+            }
+            return;
+        }
+
+        // ---------- Entidades con vida ----------
+        var healthEntity = other.GetComponent<Health>();
+        if (healthEntity != null && !damagedTargets.Contains(healthEntity))
+        {
+            Debug.Log($"Daño aplicado a: {healthEntity.name}");
+            healthEntity.TakeDamage(damage);
+            damagedTargets.Add(healthEntity);
         }
     }
 }

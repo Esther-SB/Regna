@@ -104,7 +104,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.5
-    functionName: AE_TalarEnd
+    functionName: AE_ToolActionEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
