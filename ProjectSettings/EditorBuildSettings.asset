@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4468fc62276676d41bc980db77090d8f
+  - enabled: 0
+    path: Assets/Scenes/RegnaTest_copia.unity
+    guid: 6e95869bd89beb544a326871bc470907
   - enabled: 1
     path: Assets/Scenes/RegnaTest.unity
-    guid: 6e95869bd89beb544a326871bc470907
+    guid: 77d0c3dbebaa3854985562c91105e3ca
   - enabled: 0
     path: Assets/Scenes/RegnaTest_old.unity
     guid: 92620c2801f38044aa10bf23dc5e17a9
